@@ -17,4 +17,4 @@
 # sign.
 # Another slolution would be to use tr like so
 # head -3 primer_B.fasta | tail -1 | tr -d "\n" |wc -m
-expr $(head -n 3 primer_B.fasta | tail -1 |wc -m) -1
+expr $(head -n 3 "$@" | tail -1 |wc -m) - 1
