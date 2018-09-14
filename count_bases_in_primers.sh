@@ -19,5 +19,7 @@
 # head -3 primer_B.fasta | tail -1 | tr -d "\n" |wc -m
 for file in "$@"
 do
-  echo In $(basename $file .fasta), there are $(expr $(head -n 3 "$@" | tail -1 |wc -m) - 1) nucleotide
+  FILENAME=$(basename $file .fasta)
+  COUNT=$(expr $(head -n 3 "$@" | tail -1 |wc -m) - 1)
+  echo In $FILENAME, there are $COUNT nucleotide
 done
